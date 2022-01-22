@@ -1069,7 +1069,7 @@ the process is put in failed status."
            (create-process
             (lambda ()
               (unless process
-                (setq process (apply (if sudo 'prodigy-start-sudo-process 'start-process)
+                (setq process (apply (if sudo 'prodigy-start-sudo-process 'start-file-process)
                                      (append (list name nil  command) args)))))))
       (-when-let (init (prodigy-service-init service))
         (funcall init))
